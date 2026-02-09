@@ -1,0 +1,12 @@
+{% load i18n %}
+<h1>{% translate "What Now?" %}</h1>
+<p>{% translate "You're at the sports listing page." %}</p>
+{% if available_sports %}
+    <ul>
+    {% for value, text in available_sports %}
+        <li><a href="/sport/{{ value }}/">{{ text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>{% translate "No sports are currently supported" %}</p>
+{% endif %}
